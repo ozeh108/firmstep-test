@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+
+	<title>Firmstep JS Test</title>
+
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet">
+	<link rel="icon" href="favicon.ico?v=2" type="image/x-icon" />	
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-2 filters-col">
+				<div id="filters">
+					<form>
+						<div class="filter-criteria">
+							<span>Manufacturer</span>
+							<label><input type="checkbox" name="manufacturer" value="Apple">Apple</label>
+							<label><input type="checkbox" name="manufacturer" value="Samsung">Samsung</label>
+							<label><input type="checkbox" name="manufacturer" value="HTC">HTC</label>
+							<label><input type="checkbox" name="manufacturer" value="Nokia">Nokia</label>
+							<label><input type="checkbox" name="manufacturer" value="ZTE">ZTE</label>
+							<label><input type="checkbox" name="manufacturer" value="Sony">Sony</label>
+						</div>
+						<div class="filter-criteria">
+							<span>Screen Size</span>
+							<label><input type="checkbox" name="storage" value="16">16 GB</label>
+							<label><input type="checkbox" name="storage" value="32">32 GB</label>
+						</div>
+						<div class="filter-criteria">
+							<span>OS</span>
+							<label><input type="checkbox" name="os" value="Android">Android</label>
+							<label><input type="checkbox" name="os" value="iOS">iOS</label>
+							<label><input type="checkbox" name="os" value="Windows">Windows</label>
+						</div>
+						<div class="filter-criteria">
+							<span>Camera</span>
+							<label><input type="checkbox" name="camera" value="5">5 Mpx</label>
+							<label><input type="checkbox" name="camera" value="8">8 Mpx</label>
+							<label><input type="checkbox" name="camera" value="12">12 Mpx</label>
+							<label><input type="checkbox" name="camera" value="15">15 Mpx</label>
+						</div>
+						<button>Clear filters</button>
+					</form>
+				</div>
+			</div>
+			<div class="col-md-10">
+				<ul id="products-list">
+
+					<script id="products-template" type="text/template">
+						{{#products}}
+						<li>
+							<a href="#" class="product-photo">
+								<img src="{{image.small}}" height="130" alt="{{name}}">
+							</a>
+							<h2>
+								<a href="#!"> {{name}} </a>
+							</h2>
+							<ul class="product-description">
+								<li><span>Manufacturer: </span>{{specs.manufacturer}}</li>
+								<li><span>Storage: </span>{{specs.storage}} GB</li>
+								<li><span>OS: </span>{{specs.os}}</li>
+								<li><span>Camera: </span>{{specs.camera}} Mpx</li>
+								<li><span>Description: </span>{{description}}</li>
+							</ul>
+							<p class="product-price">£{{price}}</p>
+						</li>
+						{{/products}}		
+					</script>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
